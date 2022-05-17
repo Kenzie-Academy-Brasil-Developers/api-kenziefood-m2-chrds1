@@ -5,8 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kenziefood - Cadastro</title>
+    <link rel="stylesheet" href="./../styles/style.css">
 </head>
 <body>
-    
+    <div class="container">
+        <div class="header">
+          <h2>Kenzie <span>food</span></h2>
+        </div>
+        <form action="submit" method="post" class="form" id="form-cadastro">
+          <div class="formulario">
+            <input type="text" placeholder="Nome" name="nomeUsuario" maxlength="20">
+            <small>erro</small>
+          </div>
+          <div class="formulario">
+            <input type="email" placeholder="E-mail" name="email">
+            <small>erro</small>
+            <div class="formulario">
+              <input type="password" placeholder="Senha" name="senha">
+              <small>erro</small>
+            </div>
+          <div class="formulario">
+            <input type="text" placeholder="Cidade" name="Cidade">
+            <small>erro</small>
+          </div>
+      
+          <button id="cadastrar">Cadastrar</button>
+        </form>
+      </div>
 </body>
 </html>
