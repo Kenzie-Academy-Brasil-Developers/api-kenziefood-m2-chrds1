@@ -12,25 +12,27 @@
         <div class="header">
           <h2>Kenzie <span>food</span></h2>
         </div>
-        <form action="submit" method="post" class="form" id="form-cadastro">
+        <form action="" method="post" class="form" id="form-cadastro">
           <div class="formulario">
-            <input type="text" placeholder="Nome" name="nomeUsuario" maxlength="20">
+            <input type="text" placeholder="Nome" name="name" maxlength="20">
             <small>erro</small>
           </div>
           <div class="formulario">
             <input type="email" placeholder="E-mail" name="email">
             <small>erro</small>
             <div class="formulario">
-              <input type="password" placeholder="Senha" name="senha">
+              <input type="password" placeholder="Senha" name="password">
               <small>erro</small>
             </div>
           <div class="formulario">
-            <input type="text" placeholder="Cidade" name="Cidade">
+            <input type="text" placeholder="Cidade" name="cidade">
             <small>erro</small>
           </div>
       
           <button id="cadastrar">Cadastrar</button>
         </form>
       </div>
+      <script src="./../controllers/Api.js"></script>
+      <script src="./../models/Cadastro.js"></script>
 </body>
 </html>
