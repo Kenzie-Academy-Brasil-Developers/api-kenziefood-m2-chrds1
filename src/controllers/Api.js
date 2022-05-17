@@ -1,4 +1,4 @@
-import Modal from "../models/Modal.js";
+//import Modal from "../models/Modal.js";
 
 class Api {
     static async criarUsuario(dadosDeUsuario) {
@@ -12,7 +12,7 @@ class Api {
         .then((res) => res.json())
         .then((res) => {
             if(res.status === 'error') {
-                Modal.modalDeErro(res);
+                //Modal.modalDeErro(res);
             }
             else {
                 window.location.assign('./login.html');
@@ -34,7 +34,7 @@ class Api {
         .then((res) => res.json())
         .then((res) => {
             if(res.status === 'error') {
-                Modal.modalDeErro(res);
+                //Modal.modalDeErro(res);
             }
             else {
                 localStorage.setItem('Token', res.token)
