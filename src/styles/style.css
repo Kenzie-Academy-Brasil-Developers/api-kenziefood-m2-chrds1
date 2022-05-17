@@ -17,12 +17,12 @@ body{
     border-radius: 10px;
 }
 
-.header h2{
+.titulo-cadastro{
     font-family: Poppins;
     color: #000;
 }
 
-.header h2 span{
+.titulo-menor-cadastro{
     font-family: Poppins;
     color: #FF2253;
     font-size: 19px;
