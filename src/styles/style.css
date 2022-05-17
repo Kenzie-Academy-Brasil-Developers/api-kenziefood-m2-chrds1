@@ -80,12 +80,14 @@ div{
     flex-direction: column;
     justify-content: space-between;
 }
-#containerItens li div p {
+#containerItens li div h3 {
     font-family: poppins;
     font-weight: 400;
     color: grey;
-
 }
+#containerItens li div p{
+    color: black;
+} 
 #containerItens li button{
     background-color: #fff;
     border: 0;
@@ -93,9 +95,7 @@ div{
     display: flex;
     margin-top: 2px;
 }
-.valorProduto{
-    color: black;
-}
+
 #preco {
     padding: 0 10px;
     padding-right: 25px;
