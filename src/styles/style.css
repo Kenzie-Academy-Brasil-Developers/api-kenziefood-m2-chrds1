@@ -51,11 +51,7 @@ label{
     left: 0;
 }
 
-<<<<<<< HEAD
-#cadastrar{
-=======
 #cadastrar, #login{
->>>>>>> feat/login
     background-color: #FF2253;
     border: 2px solid #FF2253;
     border-radius: 4px;
