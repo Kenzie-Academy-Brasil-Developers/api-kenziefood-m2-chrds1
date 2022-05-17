@@ -1,11 +1,11 @@
 import Modal from "../models/Modal.js";
 
 class Api {
-    static criarUsuario(dadosDeUsuario) {
+    static async criarUsuario(dadosDeUsuario) {
         const response = await fetch('https://api-kenzie-food.herokuapp.com/auth/register', {
             method: "POST",
             headers: {
-                "Content-Type": "application/json",
+                "Content-Type": "application/json"
             },
             body: JSON.stringify(dadosDeUsuario)
         })
@@ -15,7 +15,7 @@ class Api {
                 Modal.modalDeErro(res);
             }
             else {
-                window.location.assign('./index.html');
+                window.location.assign('./login.html');
             }
         })
         .catch((error) => error);
@@ -23,11 +23,11 @@ class Api {
         return response;
     }
 
-    static login(dadosDeLogin) {
+    static async login(dadosDeLogin) {
         const response = await fetch('https://api-kenzie-food.herokuapp.com/auth/login', {
             method: "POST",
             headers: {
-                "Content-Type": "application/json",
+                "Content-Type": "application/json"
             },
             body: JSON.stringify(dadosDeLogin)
         })
@@ -40,5 +40,24 @@ class Api {
                 localStorage.setItem('Token', res.token)
             }
         })
+        .catch((error) => error);
+
+        return response;
+    }
+
+    static async produtosPublicos() {
+        const response = await fetch('https://api-kenzie-food.herokuapp.com/products', {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        .then((res) => res.json())
+        .then((res) => res)
+        .catch((error) => error);
+
+        return response;
     }
 }
+
+export default Api
