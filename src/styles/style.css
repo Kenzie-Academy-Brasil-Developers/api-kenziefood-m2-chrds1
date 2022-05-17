@@ -17,12 +17,12 @@ body{
     border-radius: 10px;
 }
 
-.titulo-login{
+.titulo-cadastro{
     font-family: Poppins;
     color: #000;
 }
 
-.titulo-menor-login{
+.titulo-menor-cadastro{
     font-family: Poppins;
     color: #FF2253;
     font-size: 19px;
@@ -51,7 +51,7 @@ label{
     left: 0;
 }
 
-#login{
+#cadastrar, #login{
     background-color: #FF2253;
     border: 2px solid #FF2253;
     border-radius: 4px;
