@@ -11,11 +11,11 @@ class Api {
         })
         .then((res) => res.json())
         .then((res) => {
-            if(res.status === 'error') {
+            if(res.status === 'Error') {
                 Modal.modalDeErro(res);
             }
             else {
-                window.location.assign('./login.html');
+                //window.location.assign('./login.html');
             }
         })
         .catch((error) => error);
@@ -59,5 +59,12 @@ class Api {
         return response;
     }
 }
+const user = {
+    name: 'user001',
+    email: '',
+    password: '1234'
+}
+
+Api.criarUsuario(user);
 
 export default Api
