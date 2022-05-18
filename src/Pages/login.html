@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenziefood - Login</title>
+    <link rel="stylesheet" href="/./src/styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+          <h2 class="titulo-cadastro">Kenzie <span class="titulo-menor-cadastro">food</span></h2>
+        </div>
+        <form action="submit" method="post" class="form" id="form-login">
+          <div class="formulario">
+            <input type="email" placeholder="E-mail" id="email" name="email">
+            <small>Erro</small>
+          </div>
+          <div class="formulario">
+            <input type="password" placeholder="Senha" id="password" name="password">
+            <small>Erro</small>
+          </div>
+      
+          <button id="login">Login</button>
+        </form>
+      </div>
+      
+    <script src="./../controllers/Api.js"></script>
+    <script src="/./src/models/Login.js"></script>
+</body>
+</html>
