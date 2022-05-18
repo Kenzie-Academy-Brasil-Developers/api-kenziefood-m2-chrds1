@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Nunito:wght@700&family=Poppins:wght@500&display=swap');
 
 body{
     background-color: #FF2253;
@@ -60,4 +61,131 @@ label{
     padding: 10px;
     width: 100%;
     cursor: pointer;
+}
+
+div{
+    font-family: poppins;
+    font-weight: 500;
+}
+#containerCarrinho{
+    display: flex;
+    justify-content: center;
+}
+#carrinho{
+    width: 95%;
+    position: absolute;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+#carrinhoHeader{
+    display: flex;
+    align-items: center;
+    background-color: red;
+    color: #fff;
+    height: 60px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    gap: 10px;
+    padding-left: 10px;
+    justify-content: space-between;
+}
+#carrinhoHeader{
+    font-weight: 900;
+}
+#carrinhoHeader h1{
+    max-width: 120px;
+    font-family: poppins;
+    font-weight: 500;
+    width: 35%;
+    display: flex;
+    justify-content: space-around;
+}
+#carrinhoHeader button{
+    font-family: nunito;
+    margin-right: 5%;
+    background-color: red;
+    color: #fff;
+    border: 0;
+    font-size: 16px;
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+}
+#containerItens{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    overflow-y: scroll;
+    max-height: 300px;
+}
+#containerItens::-webkit-scrollbar{
+    background-color: rgb(255, 255, 255);
+    width: 5px;
+    border-radius: 50px;
+    border: 1px solid #fff;
+}
+
+#containerItens li{
+    gap: 0 20px;
+    padding: 0 10px;
+    display: flex;
+}
+#containerItens li img{
+    width: 75px;
+    height: 75px;
+    border-radius: 10px;
+}
+#containerItens li div{
+    display: flex;
+    width: 70%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#containerItens li div h3 {
+    font-family: poppins;
+    font-weight: 400;
+    color: grey;
+}
+#containerItens li div p{
+    color: black;
+} 
+#containerItens li button{
+    background-color: #fff;
+    border: 0;
+    color: grey;
+    display: flex;
+    margin-top: 2px;
+}
+
+#preco {
+    padding: 0 10px;
+    padding-right: 25px;
+    display: flex;
+    height: 80px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: 12.9375px;
+}
+@media (min-width:600px) {
+    #carrinho{
+        position: relative;
+        margin: 0;
+        width: 321px;
+    }
+    #containerCarrinho{ width: 350px;}
+    #carrinhoHeader{
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+    #carrinhoHeader h1{
+        width: 150px;
+    }
+    #carrinhoHeader button{display: none;}
+
 }
