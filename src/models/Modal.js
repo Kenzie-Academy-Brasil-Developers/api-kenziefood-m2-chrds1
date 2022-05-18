@@ -49,6 +49,13 @@ class Modal {
         if(mensagemDeErro === 'Validation error: Deve ser um email valido' || mensagemDeErro === 'Validation error: Campo email não pode ser vazio,\nValidation error: Deve ser um email valido') {
             mensagemDeErro = 'Digite um e-mail válido!';
         }
+        else if(mensagemDeErro === 'password invalid') {
+            mensagemDeErro = 'Senha inválida!';
+        }
+        else {
+            mensagemDeErro = 'Verifique se os dados digitados estão corretos.';
+        }
+
         
         this.criarModal(mensagemDeErro);
     }
