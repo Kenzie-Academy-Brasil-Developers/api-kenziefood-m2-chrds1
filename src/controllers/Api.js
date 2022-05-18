@@ -1,4 +1,4 @@
-//import Modal from "../models/Modal.js";
+import Modal from "../models/Modal.js";
 
 class Api {
     static async criarUsuario(dadosDeUsuario) {
@@ -11,6 +11,7 @@ class Api {
         })
         .then((res) => res.json())
         .then((res) => {
+            console.log(res)
             if(res.status === 'Error') {
                 Modal.modalDeErro(res);
             }
