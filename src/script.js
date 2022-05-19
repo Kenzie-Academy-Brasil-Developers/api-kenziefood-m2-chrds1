@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 class criarBotoes{
     static criarBotaoLogout(){
@@ -101,7 +100,6 @@ class ProdutosDashboard{
         
     }
 }
-=======
 import { Produtos } from "./models/ListaProdutos.js"
 import { Carrinho } from "./models/Carrinho.js"
 
@@ -111,4 +109,3 @@ Produtos.addHandlePesquisa();
 Produtos.addHandleLogin();
 
 
->>>>>>> d227fa3e81c15e503676fe5d12c57319bb999f44
