@@ -89,9 +89,6 @@ div{
     width: 28%;
 }
 
-#opcoesUsuario {
-    display: none;
-}
 
 .opcoes-usuario {
     position: absolute;
@@ -102,6 +99,32 @@ div{
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.info-usuario {
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.info-usuario li {
+    border-bottom: 1px dotted #cedbe9;
+    font-size: 12px;
+    line-height: 26px;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.info-usuario li:hover {
+    color: #0CA678;
+}
+
+.info-usuario li:first-child {
+    color: #303952;
+    border-bottom: 1px solid #cedbe9;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    cursor: default;
 }
 
 .container-logo{
@@ -738,3 +761,4 @@ div{
         width: 303px;
     }
 }
+
