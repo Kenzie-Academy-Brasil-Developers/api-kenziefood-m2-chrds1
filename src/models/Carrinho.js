@@ -38,7 +38,8 @@ class Carrinho{
         div.append(divHeader, ul, divFooter);
         container.append(div);
         botaoHeader.addEventListener("click", function(){
-            container.removeChild(div)
+            div.style.display = "none"
+            container.style.display = "none"
         })
     }
 
@@ -123,14 +124,17 @@ class Carrinho{
     
     static addHandlerCarrinhoFlut(){
     
-        const buttonCarrinho = document.getElementById('chamrCarrinho')
+        const buttonCarrinho = document.getElementById('chamarCarrinho')
+        const containerCarrinho = document.getElementById('containerCarrinho')
+        const carrinho = document.getElementById('carrinho')
 
         buttonCarrinho.addEventListener('click', (e)=>{
             e.preventDefault();
-              
+              containerCarrinho.style.display = 'flex';
+              carrinho.style.display = "flex";
         })
     }
 }
-Carrinho.criarCarrinho()
+
 
 export {Carrinho}

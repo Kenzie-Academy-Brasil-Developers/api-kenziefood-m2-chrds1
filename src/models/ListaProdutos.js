@@ -64,6 +64,8 @@ class Produtos{
         });
          Produtos.addHandleFiltroCategoria();
          Produtos.addHandleCarrinho();
+         Carrinho.addHandlerCarrinhoFlut();
+         
     }
     static categoria(el){
         if(el == "Frutas" || el == "frutas"){
@@ -99,6 +101,36 @@ class Produtos{
             Carrinho.criaItemCarrinho(el.imagem, el.nome, el.categoria, el.preco)
         })  
     }
+    static async addHandlePesquisa(){
+        const lista = await Api.produtosPublicos();
+        const buttonBusca = document.querySelector('.fa-magnifying-glass');
+
+        buttonBusca.addEventListener('click', function(e){
+            e.preventDefault();
+            let inputBusca = document.querySelector('.inputPesquisa');
+            
+            const valorFiltrado = lista.filter((produto) => {
+                if((produto.nome).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, '') == (inputBusca.value).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, '')){
+                    return produto.nome
+                } else if((produto.categoria).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, '') == (inputBusca.value).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, '')){
+                    return produto.categoria
+                }
+            })
+
+            Produtos.sectionProdutos.innerHTML = ""
+            Produtos.listarProdutos(valorFiltrado)
+        })
+    }
+
+    static addHandleLogin(){
+        const buttonLogin = document.querySelector(".container-login");
+
+        buttonLogin.addEventListener('click', (e)=>{
+            e.preventDefault()
+            window.location = "../src/Pages/login.html"
+        });
+    }
 }
 
-Produtos.listarProdutos(Produtos.lista)
+
+export{Produtos}

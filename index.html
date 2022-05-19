@@ -10,8 +10,25 @@
     <title>Kenziefood</title>
 </head>
 <body>
-    
+    <header class="container-header">
+        <div class="container-logo">
+            <h1>Kenzie</h1>
+            <h2>Food</h2>
+        </div>
+        <form class="container-pesquisa pesquisaHeader">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input class="inputPesquisa" type="text" placeholder="Pesquisar por produto">
+        </form>
+        <div class="container-login">
+            <i class="fa-solid fa-user"></i>
+            <span class="buttonLoginTela">Login</span>
+        </div>
+    </header>
     <main class="main">
+        <form class="container-pesquisa pesquisaMain">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input class="inputPesquisa" type="text" placeholder="Pesquisar por produto">
+        </form>
         <section class="produtos">
             <div id="container-filtro" class="container-filtro">
                 <button id="Todos" class="btn-categoria Todos">Todos</button>
@@ -29,5 +46,6 @@
     <script type="module" src="./src/models/Carrinho.js"></script>
     <script type="module" src="./src/controllers/Api.js"></script>
     <script type="module" src="./src/models/ListaProdutos.js"></script>
+    <script type="module" src="./src/script.js"></script>
 </body>
 </html>

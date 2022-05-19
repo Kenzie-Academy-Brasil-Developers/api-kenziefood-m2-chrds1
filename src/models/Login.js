@@ -21,7 +21,12 @@ class login{
 
         return dadosUsuario
     }
+
+    
 }
+
 
 const formularioLogin = document.getElementById("form-login");
 formularioLogin.addEventListener("submit", login.logarUsuario);
+
+export {login}
