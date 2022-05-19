@@ -39,7 +39,8 @@ class Carrinho{
         container.append(div);
         
         botaoHeader.addEventListener("click", function(){
-            container.removeChild(div)
+            div.style.display = "none"
+            container.style.display = "none"
         })
     }
 
@@ -62,6 +63,7 @@ class Carrinho{
     
         icon.classList.add("fa-solid","fa-trash");
         valorProd.classList.add("valorProduto");
+        desc.classList.add('item-carrinho');
         
         img.src             = imgScr;
         nomeProd.innerText  = nomeProduto;
@@ -84,7 +86,7 @@ class Carrinho{
     static calcularPreço(){
         const lista     = document.getElementById("containerItens");
         const preco     = document.getElementById("valor")
-        const qntdItens = document.getElementById("quantidadeItens")
+        const qntdItens = document.querySelectorAll("#quantidadeItens")
     
         let valorTotal  = 0
     
@@ -116,17 +118,25 @@ class Carrinho{
             currency: "BRL",
             currencyDisplay: "symbol"
         })
-    
-        qntdItens.innerText  = arrNode.length
+        
+        qntdItens.forEach(el=> el.innerText  = arrNode.length)
         preco.innerText = formatador.format(valorTotal)
+
     }
     
-}
-Carrinho.criarCarrinho()
-let btn = document.getElementById("chamarCarrinho").addEventListener('click',
-Carrinho.criarCarrinho)
-let addCarrinho = document.getElementById("addCarrinho").addEventListener('click', ()=>{
-    Carrinho.criaItemCarrinho("https://kenzie-academy-brasil.gitlab.io/fullstack/frontend/modulo2/sprint4/img/capstone-images/mousse.png", "Mousse de morango com a fruta", "Frutas", 27.5)
-})
+    static addHandlerCarrinhoFlut(){
+    
+        const buttonCarrinho = document.getElementById('chamarCarrinho')
+        const containerCarrinho = document.getElementById('containerCarrinho')
+        const carrinho = document.getElementById('carrinho')
 
-Carrinho.criaItemCarrinho("https://kenzie-academy-brasil.gitlab.io/fullstack/frontend/modulo2/sprint4/img/capstone-images/mousse.png", "Mousse de morango com a fruta", "Frutas", 12337.5)
+        buttonCarrinho.addEventListener('click', (e)=>{
+            e.preventDefault();
+              containerCarrinho.style.display = 'flex';
+              carrinho.style.display = "flex";
+        })
+    }
+}
+
+
+export {Carrinho}
