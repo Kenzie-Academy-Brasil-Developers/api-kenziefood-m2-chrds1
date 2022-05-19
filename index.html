@@ -8,18 +8,25 @@
     <link rel="stylesheet" href="./src/styles/reset.css">
     <link rel="stylesheet" href="./src/styles/style.css">
     <title>Kenziefood</title>
-    <script src="https://kit.fontawesome.com/1e3fdf6601.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./src/styles/reset.css">
-    <link rel="stylesheet" href="./src/styles/style.css">
 </head>
 <body>
-
-    <div id="containerCarrinho">
-        <button id="chamarCarrinho">chamar Carrinho</button>
-        <button id="addCarrinho">add Carrinho</button>
-    </div>
-
-    <script src="./src/models/Carrinho.js"></script>
+    
+    <main class="main">
+        <section class="produtos">
+            <div id="container-filtro" class="container-filtro">
+                <button id="Todos" class="btn-categoria Todos">Todos</button>
+                <button id="Bebidas" class="btn-categoria Bebidas"><i class="fa-solid fa-wine-glass"></i>  Bebidas</button>
+                <button id="Frutas" class="btn-categoria Frutas"><i class="fa-solid fa-lemon"></i> Frutas</button>
+                <button id="Panificadora" class="btn-categoria Panificadora"><i class="fa-solid fa-bread-slice"></i> Panificadora</button>
+            </div>
+            <section id="container-produtos" class="container-produtos">        </section>
+        </section>
+        <div id="containerCarrinho"></div>
+        <div id="chamarCarrinho"><i class="fa-solid fa-cart-plus"></i>Carrinho
+        <div id="quantidadeItens" class="quantItensFlutuante">0</div>
+        </div>
+    </main>
+    <script type="module" src="./src/models/Carrinho.js"></script>
     <script type="module" src="./src/controllers/Api.js"></script>
     <script type="module" src="./src/models/ListaProdutos.js"></script>
 </body>

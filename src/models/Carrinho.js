@@ -83,7 +83,7 @@ class Carrinho{
     static calcularPreço(){
         const lista     = document.getElementById("containerItens");
         const preco     = document.getElementById("valor")
-        const qntdItens = document.getElementById("quantidadeItens")
+        const qntdItens = document.querySelectorAll("#quantidadeItens")
     
         let valorTotal  = 0
     
@@ -115,17 +115,22 @@ class Carrinho{
             currency: "BRL",
             currencyDisplay: "symbol"
         })
-    
-        qntdItens.innerText  = arrNode.length
+        
+        qntdItens.forEach(el=> el.innerText  = arrNode.length)
         preco.innerText = formatador.format(valorTotal)
+
     }
     
+    static addHandlerCarrinhoFlut(){
+    
+        const buttonCarrinho = document.getElementById('chamrCarrinho')
+
+        buttonCarrinho.addEventListener('click', (e)=>{
+            e.preventDefault();
+              
+        })
+    }
 }
 Carrinho.criarCarrinho()
-let btn = document.getElementById("chamarCarrinho").addEventListener('click',
-Carrinho.criarCarrinho)
-let addCarrinho = document.getElementById("addCarrinho").addEventListener('click', ()=>{
-    Carrinho.criaItemCarrinho("https://kenzie-academy-brasil.gitlab.io/fullstack/frontend/modulo2/sprint4/img/capstone-images/mousse.png", "Mousse de morango com a fruta", "Frutas", 27.5)
-})
 
-Carrinho.criaItemCarrinho("https://kenzie-academy-brasil.gitlab.io/fullstack/frontend/modulo2/sprint4/img/capstone-images/mousse.png", "Mousse de morango com a fruta", "Frutas", 12337.5)
+export {Carrinho}
