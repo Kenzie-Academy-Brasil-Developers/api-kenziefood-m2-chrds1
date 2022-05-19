@@ -28,9 +28,20 @@ class Produtos{
     }
 
     static async listarProdutos(Array){
+        const logout = document.getElementById('logout');
+        logout.addEventListener('click', (event) => {
+            localStorage.clear();
+            location.reload();
+        })
         let lista = []
 
-        Array === undefined? lista = await Api.produtosPublicos(): lista = Array;
+        if(localStorage.length == 0) {
+            Array === undefined? lista = await Api.produtosPublicos(): lista = Array;
+        }
+
+        else {
+            Array === undefined? lista = await Api.produtosPrivados(): lista = Array;
+        }
 
         lista.forEach(el => {
             const divProduto =       document.createElement('div');
@@ -98,8 +109,13 @@ class Produtos{
     static async receberDados(event){
         event.preventDefault();
         const id = event.currentTarget.id
-        console.log(event.currentTarget)
-        const lista = await Api.produtosPublicos();
+        let lista;
+        if(localStorage.length == 0) {
+            lista = await Api.produtosPublicos();
+        }
+        else {
+            lista = await Api.produtosPrivados();
+        }
 
         const filtro = await lista.filter(el => el.id === id)
         

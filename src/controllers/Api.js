@@ -33,12 +33,12 @@ class Api {
         })
         .then((res) => res.json())
         .then((res) => {
-            console.log(res)
             if(res.status === 'error' || res.error) {
                 Modal.modalDeErro(res);
             }
             else {
-                localStorage.setItem('Token', res.token)
+                localStorage.setItem('Token', res)
+                console.log(localStorage)
                 window.location.assign('../../index.html');
             }
         })
@@ -65,7 +65,8 @@ class Api {
         const response = await fetch('https://api-kenzie-food.herokuapp.com/my/products', {
             method: "GET",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${localStorage.getItem('Token')}`
             }
         })
         .then((res) => res.json())
