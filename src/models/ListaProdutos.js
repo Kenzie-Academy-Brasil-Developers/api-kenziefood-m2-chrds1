@@ -149,7 +149,16 @@ class Produtos{
 
         buttonLogin.addEventListener('click', (e)=>{
             e.preventDefault()
-            window.location = "../src/Pages/login.html"
+            const opcoes = document.getElementById('opcoesUsuario');
+            
+            opcoes.style.display === 'none';
+            if(opcoes.style.display === 'none') {
+                opcoes.style.display = 'block';
+            }
+            else {
+                opcoes.style.display = 'none';
+            }
+            //window.location = "../src/Pages/login.html"
         });
     }
 }
