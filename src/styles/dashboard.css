@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+
+#header-dashboard{
+    position: absolute;
+    width: 100%;
+    height: 72px;
+    left: 0px;
+    top: 0px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 40px -20px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: space-between;
+}
+
+.container01{
+    display: flex;
+    align-items: center;
+}
+
+.container02{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 30%;
+}
+
+#kenzie{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 21.6949px;
+    line-height: 33px;
+    color: #212529;
+    position: absolute;
+    left: 35px;
+}
+
+#food{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16.2712px;
+    line-height: 24px;
+    color: #FF2253;
+}
+
+#barra-pesquisa{  
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 15px 18px 15px 16px;
+    gap: 14px;
+    width: 200px;
+    height: 29px;
+    background: #E9ECEF;
+    border: 1.5px solid #E9ECEF;
+    border-radius: 12px;
+}
+
+#foto-usuario{
+    height: 50px;
+    width: 54px;
+    margin-right: 20px;
+    border-radius: 100%;
+}
+
+#logout{
+    background-color:  #FF2253;
+    border: 2px solid  #FF2253;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px;
+    width: 70px;
+    height: 40px;
+    cursor: pointer;
+    position: relative;
+    right: 7%;
+}
+
+#login{
+    background-color:  #FF2253;
+    border: 2px solid  #FF2253;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px;
+    width: 70px;
+    height: 40px;
+    cursor: pointer;
+    position: relative;
+    right: 7%;
+
+}
+
+.modal{
+    font-family: Poppins;
+    position: fixed;
+    z-index: 10;
+    width: 25vw;
+    height: auto;
+    left: 25vw;
+    top: 50vh;
+    background-color: white;
+    transform: translateY(-25%);
+    padding: 1rem;
+    border: 1px solid silver;
+    box-shadow: 4px 4px 8px #0002;
+    border-radius: 5px;
+    opacity: 0;
+    transition: all 200ms ease-out;
+}
+
+.modal.visivel{
+    opacity: 1;
+    transform: translateY(-50%);
+}
+
+.modal>.header-modal{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #0002;
+}
+
+.modal>.corpo-modal{
+    padding: 1rem 0;
+}
+
+.modal>footer{
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid #0002;
+    padding-top: 0.75em;
+
+}
+
+span.fechar-modal{
+    background-color: #0001;
+    border-radius: 50%;
+    width: 1.25em;
+    height: 1.25em;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+
+}
+
+.confirmar{
+    background-color: #FF2253;
+    border: 2px solid #FF2253;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal>footer>.fechar-modal{
+    background-color: #fff;
+    border: 1px solid #FF2253;
+    border-radius: 4px;
+    color: #FF2253;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-produtos-dashboard{
+
+}
+
+.container-produto{
+    margin-left: 25px;
+    height: 55px;
+    width: 95%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 1px solid #E9ECEF;
+    border-radius: 12px;
+    margin-top: 15px;
+}
+
+.produto-dashboard{
+    display: flex;
+}
+
+.img-dashboard{
+    margin-right: 15px;
+    width: 51px;
+    height: 45px;
+    border-radius: 150px;
+
+}
+
+.nome-produto{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #212529;
+}
+
+.categoria{
+    width: 85px;
+    height: 28px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: rgb(134, 142, 150);
+    background: rgb(248, 249, 250);
+    border-radius: 8px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+
+.descricao{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #868E96;
+}
+
+.acoes{
+    display: flex;
+    margin-right: 25px;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 12px;
+    line-height: 14px;
+    color: #868E96;
+    margin: 25px;
+    width: 50px;
+    justify-content: space-between;
+
+
+}
+
+.editar{
+    display: grid;
+    font-weight: 900;
+    font-size: 12px;
+    line-height: 14px;
+    color: #868E96;
+    background-color: #F8F9FA;
+    width: 20px;
+    height: 20px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+
+}
+
+.excluir{
+    display: grid;
+    font-weight: 900;
+    font-size: 12px;
+    line-height: 14px;
+    color: #868E96;
+    background-color: #F8F9FA;
+    width: 20px;
+    height: 20px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+}
+
+@media screen and (max-width: 867px) {
+    .descricao {
+     display: none;
+    }
+  }
+
+  .container-filtro{
+    margin-left: 25px;
+    margin-top: 120px;
+  }
+
+  .btn-categoria{
+    font-family: 'Poppins', sans-serif;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    border-radius: 15px;
+    padding: 5px;
+    color: #868E96;
+    cursor: pointer;
+    gap: 5px;
+    font-weight: 500;
+    font-size: 12px;
+    border: none;
+    height: 40px;
+    width: 93px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-left: 15px ;
+}
+.Todos{
+    background-color: #FF2253;
+    color: #ffffff;
+    
+}
+.Panificadora{
+   background-color: #FFF7F4;  
+}
+.Panificadora:active{
+    background-color: #ffd5c5;
+    padding: 10x;   
+ }
+.Frutas{
+    background-color: #FFF7F4;  
+ }
+ .Frutas:active{
+    background-color: #fcd6c8;
+    padding: 10x;   
+
+ }
+ .Bebidas{
+     background-color: #F3EEF5;
+ }
+ .Bebidas:active{
+    background-color: #e1a6f8;
+    padding: 10px;
+}
