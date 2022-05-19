@@ -37,6 +37,7 @@ class Carrinho{
         divHeader.append(h1, botaoHeader);
         div.append(divHeader, ul, divFooter);
         container.append(div);
+        
         botaoHeader.addEventListener("click", function(){
             container.removeChild(div)
         })
