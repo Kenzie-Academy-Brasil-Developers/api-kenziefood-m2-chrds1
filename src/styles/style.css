@@ -289,7 +289,7 @@ div{
 }
 @media (min-width:767px) {
     #containerCarrinho{
-        display: flex;
+       display: flex;
        justify-content: center;
        align-items: flex-start;
        max-width: 28%;
@@ -737,4 +737,94 @@ div{
     .card-produto {
         width: 303px;
     }
+}
+#modal-Sucesso{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    width: 25%;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: sticky;
+    left: 75%;
+    bottom: 0%;
+    height: 80px;
+    justify-content: space-between;
+    max-width: 500px;
+}
+
+#modal-Falhou{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    width: 25%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: sticky;
+    left: 75%;
+    bottom: 0%;
+    height: 80px;
+    justify-content: space-between;
+    max-width: 500px;
+}
+#modal-Sucesso div{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+#modal-Falhou div{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+
+}
+#modal-Sucesso p{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    width: 80%;
+    color: #5e6368;
+}
+#modal-Falhou p{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    width: 80%;
+    font-size: 14px;
+    color: #5e6368;
+}
+#modal-Sucesso .sucesso{
+    background-color: #0CA678;
+    width: 100%;
+    height: 12px;
+    width: 100%;
+    height: 7px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+#modal-Falhou .falhou{
+    background-color: #FF2253;
+    width: 100%;
+    height: 7px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+#modal-Falhou .status{
+    width: 80%;
+}
+
+#modal-Sucesso button{
+    background-color: #E4F7EF;
+    border: 0;
+    color: #868E96;
+}
+#modal-Falhou button{
+    background-color: #E4F7EF;
+    border: 0;
+    color: #868E96;
 }

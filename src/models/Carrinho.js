@@ -40,6 +40,8 @@ class Carrinho{
         botaoHeader.addEventListener("click", function(){
             div.style.display = "none"
             container.style.display = "none"
+            carrinho.style.width = "60%"
+            
         })
     }
 
@@ -131,8 +133,9 @@ class Carrinho{
 
         buttonCarrinho.addEventListener('click', (e)=>{
             e.preventDefault();
-              containerCarrinho.style.display = 'flex';
-              carrinho.style.display = "flex";
+            containerCarrinho.style.display = 'flex';
+            carrinho.style.display = "flex";
+            carrinho.style.width = "60%"
         })
     }
 }
