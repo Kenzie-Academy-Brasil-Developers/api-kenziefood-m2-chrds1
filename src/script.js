@@ -59,3 +59,44 @@ logout.botoesFecharModal.forEach(botao => botao.addEventListener("click", logout
 logout.botaoConfirmarLogout.addEventListener("click", logout.usuarioLogout)
 logout.botaoLogin.addEventListener("click", logout.LogarUsuario)
 
+class ProdutosDashboard{
+
+    static criarCard(){
+        const containerProd = document.createElement("div")
+        const divProduto = document.createElement("div")
+        const imgProduto = document.createElement("img")
+        const nomeProduto = document.createElement("p")
+        const categoriaProduto = document.createElement("div")
+        const descricaoProduto = document.createElement("div")
+        const containerIcones = document.createElement("div")
+        const divEditar = document.createElement("div")
+        const btnEditar = document.createElement("i")
+        const divExcluir = document.createElement("div")
+        const btnExcluir = document.createElement("i")
+
+        containerProd.classList.add("container-produto")
+        divProduto.classList.add("produto-dashboard")
+        imgProduto.classList.add("img-dashboard")
+        nomeProduto.classList.add("nome-produto") 
+        categoriaProduto.classList.add("categoria")
+        descricaoProduto.classList.add("descricao")
+        containerIcones.classList.add("acoes")
+        divEditar.classList.add("editar")
+        btnEditar.classList.add("fas fa-edit")
+        divExcluir.classList.add("excluir")
+        btnExcluir.classList.add("fas fa-trash")
+
+        imgProduto.src = `${}`
+        nomeProduto.innerHTML = `${}`
+        categoriaProduto.innerHTML= `${}`
+        descricaoProduto.innerHTML= `${}`
+
+        divProduto.append(imgProduto, nomeProduto)
+        divEditar.append(btnEditar)
+        divExcluir.append(btnExcluir)
+        containerIcones.append(divEditar, divExcluir)
+        containerProd.append(divProduto, categoriaProduto, descricaoProduto, containerIcones)
+
+        
+    }
+}
