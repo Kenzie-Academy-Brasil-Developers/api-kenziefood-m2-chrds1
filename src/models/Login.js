@@ -1,18 +1,15 @@
-import Api from "../controllers/Api";
-
-const formularioLogin = document.getElementById("form-login");
-formularioLogin.addEventListener("submit", login.logarUsuario);
+import Api from "../controllers/Api.js";
 
 class login{
     static async logarUsuario(event){
         
         event.preventDefault()
 
-        const dadosLogin = capiturarDadosFormularios(event)
+        const dadosLogin = login.capturarDadosFormularios(event)
         Api.login(dadosLogin)
     }
 
-    capiturarDadosFormularios(event){
+    static capturarDadosFormularios(event){
         const dadosForm = [... event.currentTarget];
         const dadosUsuario = {};
 
@@ -25,3 +22,6 @@ class login{
         return dadosUsuario
     }
 }
+
+const formularioLogin = document.getElementById("form-login");
+formularioLogin.addEventListener("submit", login.logarUsuario);

@@ -7,10 +7,9 @@ class Cadastro{
         const dadosUsuario = Cadastro.capiturarDadosFormularios(event);
         console.log(dadosUsuario);
         Api.criarUsuario(dadosUsuario);
-
     }
     
-    static capiturarDadosFormularios(event) {
+    static capturarDadosFormularios(event) {
         event.preventDefault();
         const dadosForm = [... event.currentTarget];
         const dadosUsuario = {};
@@ -20,9 +19,7 @@ class Cadastro{
                 dadosUsuario[dado.name] = dado.value;
             }
         })
-
-        console.log(dadosUsuario);
-    
+        
         return dadosUsuario;
     }
 }
