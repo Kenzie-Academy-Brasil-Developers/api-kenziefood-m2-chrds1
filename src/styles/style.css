@@ -708,11 +708,16 @@ div{
 }
 /* Formulario AddProduto */
 #containerCadastro{
+
     position: absolute;
     left: 35%;
-
     min-width: 450px;
     height: 90%;
+}
+#containerCadastro *{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
 }
 #editBtn{
     width: 217px;
@@ -828,7 +833,24 @@ div{
     border-radius: 10px;
     padding: 0;
 }
-
+.cancelarEdit{
+    font-size: 16px;
+    line-height: 19px;
+    width: 90%;
+    height: 30px;
+    margin-top: 10px;
+    height: 40;
+    border-radius: 15px;
+    border: 0;
+    background: #F8F9FA;
+    color: #868E96;
+    cursor: pointer;
+}
+.cancelarEdit:hover{
+    transition: 0,5s ease-in-out;
+    background-color: #FF2253;
+    color: #DEE2E6;
+}
 .formulario-adicionar input::-webkit-inner-spin-button{
     -webkit-appearance: none;
 }
