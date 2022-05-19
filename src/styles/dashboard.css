@@ -168,3 +168,120 @@ span.fechar-modal{
     justify-content: center;
     align-items: center;
 }
+
+.container-produtos-dashboard{
+
+}
+
+.container-produto{
+    margin-left: 25px;
+    height: 55px;
+    width: 95%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 1px solid #E9ECEF;
+    border-radius: 12px;
+    margin-top: 15px;
+}
+
+.produto-dashboard{
+    display: flex;
+}
+
+.img-dashboard{
+    margin-right: 15px;
+    width: 51px;
+    height: 45px;
+    border-radius: 150px;
+
+}
+
+.nome-produto{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #212529;
+}
+
+.categoria{
+    width: 85px;
+    height: 28px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: rgb(134, 142, 150);
+    background: rgb(248, 249, 250);
+    border-radius: 8px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+
+.descricao{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #868E96;
+}
+
+.acoes{
+    display: flex;
+    margin-right: 25px;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 12px;
+    line-height: 14px;
+    color: #868E96;
+    margin: 25px;
+    width: 50px;
+    justify-content: space-between;
+
+
+}
+
+.editar{
+    display: grid;
+    font-weight: 900;
+    font-size: 12px;
+    line-height: 14px;
+    color: #868E96;
+    background-color: #F8F9FA;
+    width: 20px;
+    height: 20px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+
+}
+
+.excluir{
+    display: grid;
+    font-weight: 900;
+    font-size: 12px;
+    line-height: 14px;
+    color: #868E96;
+    background-color: #F8F9FA;
+    width: 20px;
+    height: 20px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+}
+
+@media screen and (max-width: 867px) {
+    .descricao {
+     display: none;
+    }
+  }

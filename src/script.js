@@ -58,3 +58,4 @@ logout.botaoLogout.addEventListener("click", logout.confirmarLogout)
 logout.botoesFecharModal.forEach(botao => botao.addEventListener("click", logout.fecharModal))
 logout.botaoConfirmarLogout.addEventListener("click", logout.usuarioLogout)
 logout.botaoLogin.addEventListener("click", logout.LogarUsuario)
+
