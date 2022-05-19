@@ -35,8 +35,10 @@ class Produtos{
         lista.forEach(el => {
             const divProduto =       document.createElement('div');
             const imagemProduto =    document.createElement('img');
+            const infoProduto      = document.createElement('div');
             const nomeProduto =      document.createElement('p');
             const descricaoProduto = document.createElement('p');
+            const precoEBotao      = document.createElement('div');
             const preco =            document.createElement('p');
             const iconeCarrinho =    document.createElement('button')
             const categoriaProduto = document.createElement('span')
@@ -52,13 +54,17 @@ class Produtos{
             iconeCarrinho.id = el.id;
             divProduto.classList.add('card-produto');
             imagemProduto.classList.add('img-produto');
+            infoProduto.classList.add('info-produto');
             nomeProduto.classList.add('texto-nome');
             categoriaProduto.classList.add('btn-categoria');
             descricaoProduto.classList.add('texto-descricao');
+            precoEBotao.classList.add('preco-e-botao-carrinho');
             preco.classList.add('texto-preco');
             iconeCarrinho.classList.add('btn-carrinho');
 
-            divProduto.append(imagemProduto, nomeProduto, descricaoProduto, categoriaProduto, preco, iconeCarrinho);
+            precoEBotao.append(preco,iconeCarrinho);
+            infoProduto.append(nomeProduto, descricaoProduto, categoriaProduto, precoEBotao);
+            divProduto.append(imagemProduto, infoProduto);
             Produtos.sectionProdutos.append(divProduto);
 
         });

@@ -39,6 +39,7 @@ class Api {
             }
             else {
                 localStorage.setItem('Token', res.token)
+                window.location.assign('../../index.html');
             }
         })
         .catch((error) => error);

@@ -4,7 +4,7 @@ class Cadastro{
     static cadastrarUsuario(event){
         event.preventDefault();
         
-        const dadosUsuario = Cadastro.capiturarDadosFormularios(event);
+        const dadosUsuario = Cadastro.capturarDadosFormularios(event);
         console.log(dadosUsuario);
         Api.criarUsuario(dadosUsuario);
     }

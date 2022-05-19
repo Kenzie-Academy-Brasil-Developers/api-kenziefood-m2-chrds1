@@ -62,6 +62,7 @@ class Carrinho{
     
         icon.classList.add("fa-solid","fa-trash");
         valorProd.classList.add("valorProduto");
+        desc.classList.add('item-carrinho');
         
         img.src             = imgScr;
         nomeProd.innerText  = nomeProduto;

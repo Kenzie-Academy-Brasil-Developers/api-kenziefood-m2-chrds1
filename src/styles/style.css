@@ -5,6 +5,11 @@
     font-family: 'Poppins';
     background-color: #FFFFFF;
 }
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
 .bodyCadastroLogin{
     background-color: #FF2253;
     display: flex;
@@ -72,13 +77,25 @@ div{
 }
 
 .container-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    padding: 15px;
     font-family: 'Poppins';
     box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
 }
+.header-content {
+    width: 70vw;
+    height: 74px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.search-login {
+    width: 24vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .container-logo{
     display: flex;
     align-items: baseline;
@@ -93,11 +110,6 @@ div{
     font-size: 16px;
     color: #FF2253;
 }
-.container-pesquisa{
-    display: flex;
-    width: 30%;
-    gap: 0;
-}
 .pesquisaHeader{
     display: none;
 }
@@ -109,18 +121,19 @@ div{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #303952;
-    color: #ffffff;
-    height: 27px;
-    width: 27px;
+    background-color: #E9ECEF;
+    color: #868E96;
+    height: 52px;
+    width: 50px;
     border-top-left-radius:8px ;
     border-bottom-left-radius: 8px;
 }
 .container-pesquisa input{
-    height: 25px;
-    width: 80%;
+    color: #868E96;
+    height: 50px;
+    width: 13.7vw;
     border: 0;
-    background-color: #F3EEF5;
+    background-color: #E9ECEF;
     border-bottom-right-radius: 8px;
     border-top-right-radius: 8px;
 }
@@ -165,6 +178,7 @@ div{
 }
 
 #carrinhoHeader h1{
+    font-family: 'Poppins', sans-serif;
     max-width: 120px;
     background-color: red;
     font-weight: 500;
@@ -204,6 +218,7 @@ div{
 }
 
 #containerItens li{
+    font-family: 'Poppins', sans-serif;
     gap: 0 20px;
     padding: 0 10px;
     display: flex;
@@ -211,6 +226,7 @@ div{
 #containerItens li img{
     width: 75px;
     height: 75px;
+    object-fit: cover;
     border-radius: 10px;
 }
 #containerItens li div{
@@ -221,10 +237,12 @@ div{
 }
 #containerItens li div h3 {
     font-weight: 400;
+    font-size: 12px;
     color: grey;
 }
 #containerItens li div p{
     color: black;
+    font-size: 14px;
 } 
 #containerItens li button{
     background-color: #fff;
@@ -232,6 +250,11 @@ div{
     color: grey;
     display: flex;
     margin-top: 2px;
+}
+
+.item-carrinho h2 {
+    font-weight: 500;
+    font-size: 14px;
 }
 
 #preco {
@@ -253,7 +276,7 @@ div{
         margin: 0;
        justify-content: center;
        align-items: flex-start;
-       width: 30%;
+       max-width: 320px;
        height: auto;
        position:static;
        background: #ffffff;
@@ -338,34 +361,40 @@ div{
 
 
 .texto-nome{
+    font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 16px;
 }
 .texto-descricao{
+    font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-size: 14px;
-    text-align: justify;
+    line-height: 24px;
     color: #868E96;
-    max-height: 70px;
+    height: 100px;
+    overflow: hidden;
+    margin-top: 20px;
 }
 .texto-preco{
+    font-family: 'Poppins', sans-serif;
     margin: 10px;
     font-weight: 500;
     font-size: 14px;
     color: #212529;
 }
 .btn-categoria{
+    font-family: 'Poppins', sans-serif;
     padding: 5px;
     display: flex;
     align-items: center;
     justify-content: start;
     border-radius: 15px;
     padding: 5px;
-    color: #212529;
+    color: #868E96;
     cursor: pointer;
     gap: 5px;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 12px;
     border: none;
 }
 .Todos{
@@ -402,12 +431,6 @@ div{
     border-radius: 50%;
     background-color: #E4F7EF;
     color: #0CA678;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    right: 0px;
-    bottom: 0px;
     cursor: pointer;
 }
 .btn-carrinho:active{
@@ -417,12 +440,6 @@ div{
     border-radius: 50%;
     background-color: #E4F7EF;
     color: #0CA678;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    right: 0px;
-    bottom: 0px;
     cursor: pointer;
 }
 
@@ -433,14 +450,12 @@ div{
     #conteinerCarrinho{
         display: none;
     }
-    .main{
-        position: relative;
-    }   
     .container-filtro{
         display: flex;
         gap: 15px;
     }
     #chamarCarrinho{
+        font-family: 'Poppins', sans-serif;
         width: 100%;
         height: 50px;
         color: #ffffff;
@@ -456,6 +471,7 @@ div{
         background-color: red;
     }
     #chamarCarrinho div{
+        font-family: 'Poppins', sans-serif;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -492,8 +508,10 @@ div{
     }
     .img-produto{
         border-radius: 8px;
+        border: 3px solid #FFE9EE;
         width: 100%;
         height: 200px;
+        object-fit: cover;
     }
 
 }
@@ -511,6 +529,7 @@ div{
         margin: 10px;
     }
     #chamarCarrinho{
+        font-family: 'Poppins', sans-serif;
         width: 100%;
         height: 50px;
         color: #ffffff;
@@ -570,15 +589,14 @@ div{
    }
    .pesquisaHeader{
        display: flex;
+       justify-content: space-between;
    }
     #chamarCarrinho{
         display: none;
     }
     .main{
         display: flex;
-        position: relative;
         margin: 20px;
-        width: 95%;
         gap: 20px;
     }
     .produtos{
@@ -627,14 +645,15 @@ div{
     }   
     .main{
         display: flex;
-        margin: 20px;
-        gap: 20px;
+        justify-content: space-between;
+        margin: 20px auto;
+        width: 70vw;
     }
     .produtos{
         display: flex;
         flex-direction: column;
         gap: 15px;
-        max-width: 70%;
+        max-width: 80%;
     }
     .container-filtro{
         display: flex;
@@ -647,26 +666,42 @@ div{
     .container-produtos{
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-evenly;
-        margin: 0 auto;
-        gap: 20px;
-        padding: auto;
-        max-width: 100%;
+        justify-content: space-between;
+        max-width: 50vw;
+        margin-right: 20px;
     }
     .card-produto{
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
         min-width: 160px;
-        width: 31%;
-        gap: 15px;
-        position: relative;
-    
+        max-width: 300px;  
+        margin-bottom: 30px;
     }
     .img-produto{
+        border: 3px solid #FFE9EE;
         border-radius: 8px;
-        width: 100%;
+        width: 300px;
         height: 200px;
+        object-fit: cover;
     }
-    
+
+    .info-produto {
+        font-family: 'Poppins';
+        margin-top: 20px;
+    }
+
+    .preco-e-botao-carrinho {
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .texto-preco{
+        margin: 0;
+        font-weight: 500;
+        font-size: 14px;
+        color: #212529;
+    }
 }
