@@ -12,17 +12,30 @@ class Produtos{
     static async filtroProdutos(event) {
         event.preventDefault();
 
-        const lista = await Api.produtosPublicos();
+        let lista = []
+
+        if(localStorage.length == 0) {
+            lista = await Api.produtosPublicos()
+        }
+        else {
+            lista = await Api.produtosPrivados()
+        }
+        
         if(event.target.id === "Todos"){
             Produtos.sectionProdutos.innerHTML = ""
             Produtos.listarProdutos();
-        }else{
+        }else if(lista.length > 0){
             const filtroCategoria = lista.filter((el)=>{
                 return (el.categoria == event.target.innerText)
             });
 
             Produtos.sectionProdutos.innerHTML = ""
             Produtos.listarProdutos(filtroCategoria)
+        } else{
+            Produtos.sectionProdutos.innerHTML = ""
+            const mensagem = document.createElement('smal')
+            mensagem.innerText= "Sem produtos da categoria escolhida"
+            Produtos.sectionProdutos.append(mensagem)
         }
         
     }
@@ -118,25 +131,39 @@ class Produtos{
             Carrinho.criaItemCarrinho(el.imagem, el.nome, el.categoria, el.preco)
         })  
     }
+
+
+
     static async addHandlePesquisa(){
-        const lista = await Api.produtosPublicos();
+
         const buttonBusca = document.querySelector('.fa-magnifying-glass');
+        const inputBusca = document.querySelector('.inputPesquisa');
 
-        buttonBusca.addEventListener('click', function(e){
-            e.preventDefault();
-            let inputBusca = document.querySelector('.inputPesquisa');
-            
-            const valorFiltrado = lista.filter((produto) => {
-                if((produto.nome).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, '') == (inputBusca.value).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, '')){
-                    return produto.nome
-                } else if((produto.categoria).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, '') == (inputBusca.value).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, '')){
-                    return produto.categoria
-                }
-            })
+        inputBusca.addEventListener('keyup', Produtos.pesquisarNome);
+    }
+    
+    static async pesquisarNome(event){
+        event.preventDefault();
 
-            Produtos.sectionProdutos.innerHTML = ""
-            Produtos.listarProdutos(valorFiltrado)
+        let lista = []
+
+        if(localStorage.length == 0) {
+            lista = await Api.produtosPublicos()
+        }
+        else {
+            lista = await Api.produtosPrivados()
+        }
+
+        const valorFiltrado = lista.filter((produto) => {
+            if((produto.nome).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, '') == (event.target.value).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, '')){
+                return produto.nome
+            } else if((produto.categoria).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, '') == (event.target.value).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, '')){
+                return produto.categoria
+            }
         })
+
+        Produtos.sectionProdutos.innerHTML = ""
+        Produtos.listarProdutos(valorFiltrado)
     }
 
     static addHandleLogin(){
