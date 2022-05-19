@@ -9,37 +9,36 @@
     <link rel="stylesheet" href="./src/styles/reset.css">
     <title>Kenziefood</title>
 </head>
-<section>
-    <header class="container-header">
-        <div class="header-content">
-            <div class="logo-usuario">
-                <div class="container-logo">
-                    <h1>Kenzie</h1>
-                    <h2>Food</h2>
-                </div>
+<body>
+    <section>
+        <header class="container-header">
+            <div class="header-content">
+                <div class="logo-usuario">
+                    <div class="container-logo">
+                        <h1>Kenzie</h1>
+                        <h2>Food</h2>
+                    </div>
 
-                <div class="informacoes-usuario">
-                    <div class="container-login">
-                        <img alt="user-logged-out" src="./src/img/user-logged-out-icon.png">                   
+                    <div class="informacoes-usuario">
+                        <div class="container-login">
+                            <img alt="user-logged-out" id="imgMenuUsuario">                   
+                        </div>
+
+                        <div class="opcoes-usuario" id="opcoesUsuario">
+                            <ul class="info-usuario" id="infoUsuario">
+                            </ul>
+                        </div>
                     </div>
-    
-                    <div class="opcoes-usuario" id="opcoesUsuario">
-                        <ul class="info-usuario" id="infoUsuario">
-                        </ul>
-                    </div>
-    
-                    <span id="logout">Logout</span>
+                </div>
+                <div class="search">
+
+                    <form class="container-pesquisa pesquisaHeader">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input class="inputPesquisa" type="text" placeholder="Pesquisar por produto">
+                    </form>
                 </div>
             </div>
-            <div class="search">
-
-                <form class="container-pesquisa pesquisaHeader">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input class="inputPesquisa" type="text" placeholder="Pesquisar por produto">
-                </form>
-            </div>
-        </div>
-    </header>
+        </header>
     <section class="main">
         <form class="container-pesquisa pesquisaMain">
             <i class="fa-solid fa-magnifying-glass"></i>
@@ -52,14 +51,20 @@
                 <button id="Frutas" class="btn-categoria Frutas"><i class="fa-solid fa-lemon"></i> Frutas</button>
                 <button id="Panificadora" class="btn-categoria Panificadora"><i class="fa-solid fa-bread-slice"></i> Panificadora</button>
             </div>
+
             <section id="container-produtos" class="container-produtos">        </section>
             </section>
+
             <div id="containerCarrinho"></div>
-            <div id="chamarCarrinho"><i class="fa-solid fa-cart-plus"></i>Carrinho
-            <div id="quantidadeItens" class="quantItensFlutuante">0</div>
+
+            <div id="chamarCarrinho">
+                <i class="fa-solid fa-cart-plus"></i>Carrinho
+                <div id="quantidadeItens" class="quantItensFlutuante">0</div>
             </div>
         </section>
     </section>
+    
+    <script type="module" src="./src/models/Menu.js"></script>
     <script type="module" src="./src/models/Carrinho.js"></script>
     <script type="module" src="./src/controllers/Api.js"></script>
     <script type="module" src="./src/models/ListaProdutos.js"></script>

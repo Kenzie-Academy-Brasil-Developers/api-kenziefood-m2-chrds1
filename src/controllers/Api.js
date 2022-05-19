@@ -17,6 +17,7 @@ class Api {
             else {
                 window.location.assign('./login.html');
             }
+            return res;
         })
         .catch((error) => error);
 
@@ -38,9 +39,9 @@ class Api {
             }
             else {
                 localStorage.setItem('Token', res)
-                console.log(localStorage)
                 window.location.assign('../../index.html');
             }
+            return res
         })
         .catch((error) => error);
 

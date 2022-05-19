@@ -28,11 +28,6 @@ class Produtos{
     }
 
     static async listarProdutos(Array){
-        const logout = document.getElementById('logout');
-        logout.addEventListener('click', (event) => {
-            localStorage.clear();
-            location.reload();
-        })
         let lista = []
 
         if(localStorage.length == 0) {
@@ -150,8 +145,7 @@ class Produtos{
         buttonLogin.addEventListener('click', (e)=>{
             e.preventDefault()
             const opcoes = document.getElementById('opcoesUsuario');
-            
-            opcoes.style.display === 'none';
+            console.log("click")
             if(opcoes.style.display === 'none') {
                 opcoes.style.display = 'block';
             }
