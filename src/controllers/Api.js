@@ -80,7 +80,8 @@ class Api {
         const response = await fetch('https://api-kenzie-food.herokuapp.com/my/products', {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${localStorage.getItem('Token')}`
             },
             body: JSON.stringify(produto)
         })
