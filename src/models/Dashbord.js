@@ -1,4 +1,4 @@
-import {Api} from "./src/controllers/Api.js"
+//import {Api} from "./src/controllers/Api.js"
 
 class criarBotoes{
     static criarBotaoLogout(){
@@ -92,10 +92,10 @@ class ProdutosDashboard{
         divExcluir.classList.add("excluir")
         btnExcluir.classList.add("fas fa-trash")
 
-        imgProduto.src = `${}`
+       /* imgProduto.src = `${}`
         nomeProduto.innerHTML = `${}`
         categoriaProduto.innerHTML= `${}`
-        descricaoProduto.innerHTML= `${}`
+        descricaoProduto.innerHTML= `${}`*/
 
         divProduto.append(imgProduto, nomeProduto)
         divEditar.append(btnEditar)
