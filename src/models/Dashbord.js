@@ -64,6 +64,7 @@ class ProdutosDashboard{
     static containerProdutos = document.querySelector('.container-produtos-dashboard')
 
     static async criarCard(Array){
+        ProdutosDashboard.containerProdutos.innerHTML=""
         let lista = []
 
         if(localStorage.length > 0) {
@@ -95,8 +96,8 @@ class ProdutosDashboard{
                 divEditar.classList.add("editar")
                 divExcluir.classList.add("excluir")
 
-                btnEditar.innerHTML = `<i class="fas fa-edit"></i>`
-                btnExcluir.innerHTML = `<i class="fas fa-trash"></i>`
+                btnEditar.innerHTML = `<i id="${produto.id}"class="fas fa-edit"></i>`
+                btnExcluir.innerHTML = `<i id="${produto.id}" class="fas fa-trash"></i>`
 
                 imgProduto.src = produto.imagem
                 nomeProduto.innerText = produto.nome
@@ -113,6 +114,7 @@ class ProdutosDashboard{
             })
         }
         ProdutosDashboard.addHandleFiltroCategoria();
+        ProdutosDashboard.addHandleExcluir();
     }
     static async filtroProdutos(event) {
         event.preventDefault();
@@ -167,6 +169,18 @@ class ProdutosDashboard{
         const categoriaProduto = document.querySelectorAll('.btn-categoria')
 
         categoriaProduto.forEach(el => el.addEventListener('click', ProdutosDashboard.filtroProdutos));
+    }
+    static addHandleExcluir(){
+        const excluir = document.querySelectorAll('.fa-trash')
+        console.log(excluir)
+        excluir.forEach((el)=> el.addEventListener('click', ProdutosDashboard.excluirItem))
+    }
+    static async excluirItem(event){
+        const id = event.target.id;
+        const deletar = await Api.deletarProduto(id);
+
+        ProdutosDashboard.criarCard();
+        return deletar
     }
 }
 ProdutosDashboard.criarCard();
