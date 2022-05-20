@@ -82,8 +82,8 @@ class FormularioEditar{
         buttonCancelar.innerText = "Excluir alterações"
         buttonCancelar.classList.add("cancelarEdit")
         buttonCancelar.addEventListener('click', ()=>{
-            container.removeChild(divHeader);
-            container.removeChild(divFormContainer);
+            const divEditar = document.getElementById('containerCadastro');
+            divEditar.style.display = 'none';
         });
 
         div2.append(button1, button2, button3);
