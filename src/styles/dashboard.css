@@ -182,14 +182,16 @@ span.fechar-modal{
 }
 
 .produto-dashboard{
+    margin-left: 20px;
     display: flex;
+    align-items: center;
     width: 100px;
 }
 
 .img-dashboard{
     margin-right: 15px;
-    width: 51px;
-    height: 45px;
+    width: 32px;
+    height: 32px;
     border-radius: 150px;
 
 }
@@ -204,7 +206,7 @@ span.fechar-modal{
 }
 
 .categoria{
-    width: 85px;
+    width: 120px;
     height: 28px;
     font-family: Poppins;
     font-style: normal;
@@ -217,8 +219,13 @@ span.fechar-modal{
     align-items: center;
     display: flex;
     justify-content: center;
+    transition: .5s;
 }
 
+.categoria:hover {
+    background-color: #FF2253;
+    color: #ffffff;
+}
 
 .descricao{
     font-family: 'Poppins';
@@ -257,7 +264,13 @@ span.fechar-modal{
     align-items: center;
     justify-content: center;
     border-radius: 100%;
+    cursor: pointer;
+    transition: .5s;
+}
 
+.editar:hover {
+    background-color: #FF2253;
+    color: #ffffff;
 }
 
 .excluir{
@@ -272,6 +285,13 @@ span.fechar-modal{
     align-items: center;
     justify-content: center;
     border-radius: 100%;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.excluir:hover {
+    background-color: #FF2253;
+    color: #ffffff;
 }
 
 @media screen and (max-width: 867px) {

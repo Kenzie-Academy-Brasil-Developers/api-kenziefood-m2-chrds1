@@ -37,8 +37,9 @@ class Modal {
     static botaoFecharModal() {
         const botaoFechar = document.getElementById('fechar-modal');
         const modal = document.getElementById('janela-modal');
-
-        botaoFechar.addEventListener('click', () => {
+        console.log('click out')
+        botaoFechar.addEventListener('click', (e) => {
+            console.log('click')
             modal.style.display = 'none';
         })
     }
