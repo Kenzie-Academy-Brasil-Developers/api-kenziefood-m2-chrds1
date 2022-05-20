@@ -1,10 +1,13 @@
 import Api from "../controllers/Api.js";
+import FormularioEditar from "./Formularioeditar.js";
 
 class ProdutosDashboard{
 
     static containerProdutos = document.querySelector('.container-produtos-dashboard')
 
     static async criarCard(Array){
+        const divEditar = document.getElementById('containerCadastro');
+        divEditar.style.display = 'none';
         ProdutosDashboard.containerProdutos.innerHTML=""
         let lista = []
 
@@ -52,6 +55,8 @@ class ProdutosDashboard{
                 containerProd.append(divProduto, categoriaProduto, descricaoProduto, containerIcones)
 
                 ProdutosDashboard.containerProdutos.append(containerProd)
+
+                this.addHandleEditar(produto.categoria, produto.nome, produto.descricao, produto.preco, produto.imagem, produto.id);
             })
         }
         ProdutosDashboard.addHandleFiltroCategoria();
@@ -111,11 +116,39 @@ class ProdutosDashboard{
 
         categoriaProduto.forEach(el => el.addEventListener('click', ProdutosDashboard.filtroProdutos));
     }
+
+    static addHandleEditar(categoria, nomeProd, descProd, valorProd, imgProd, id){
+        let handler = document.getElementById(id);
+        handler.addEventListener('click', (evt)=>{
+            const divEditar = document.getElementById('containerCadastro');
+            divEditar.style.display = 'block';
+            FormularioEditar.criaModalFormulario(evt, nomeProd, descProd, valorProd, imgProd);
+            FormularioEditar.criaPedido(evt);
+            let div  = document.getElementById("categorias").childNodes
+            div.forEach(elem=>{
+                if(categoria === elem.innerText){
+                    elem.classList.add("selecaoCategoria")
+                    FormularioEditar.pedido.categoria = ""
+                    FormularioEditar.pedido.categoria = elem.innerText
+                }
+                elem.addEventListener("click", (e)=>{
+                    div.forEach((elem2)=>{
+                        elem2.classList.remove("selecaoCategoria")
+                    })
+                    FormularioEditar.pedido.categoria = ""
+                    FormularioEditar.pedido.categoria = elem.innerText
+                    e.target.classList.add("selecaoCategoria")
+                });
+            });
+        });
+    }
+    
     static addHandleExcluir(){
         const excluir = document.querySelectorAll('.fa-trash')
         console.log(excluir)
         excluir.forEach((el)=> el.addEventListener('click', ProdutosDashboard.excluirItem))
     }
+
     static async excluirItem(event){
         const id = event.target.id;
         const deletar = await Api.deletarProduto(id);

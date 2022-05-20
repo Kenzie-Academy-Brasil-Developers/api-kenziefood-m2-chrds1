@@ -15,23 +15,23 @@ class FormularioEditar{
         divHeader.append(h1, buttonClose);
 
         /* Formulario */
-        let divFormContainer = document.createElement("div");
-        let form = document.createElement("form");
-        let h2 = document.createElement("h2");
-        let div2 = document.createElement("div");
-        let button1 = document.createElement("h2");
-        let button2 = document.createElement("h2");
-        let button3 = document.createElement("h2");
-        let label1 = document.createElement("label");
-        let label2 = document.createElement("label");
-        let label3 = document.createElement("label");
-        let label4 = document.createElement("label");
-        let inputNome = document.createElement("input");
-        let inputDesc = document.createElement("input");
-        let inputValor = document.createElement("input");
-        let inputImagem = document.createElement("input");
-        let inputSubmit = document.createElement("input");
-        let buttonCancelar = document.createElement("button");
+        const divFormContainer = document.createElement("div");
+        const form = document.createElement("form");
+        const h2 = document.createElement("h2");
+        const div2 = document.createElement("div");
+        const button1 = document.createElement("h2");
+        const button2 = document.createElement("h2");
+        const button3 = document.createElement("h2");
+        const label1 = document.createElement("label");
+        const label2 = document.createElement("label");
+        const label3 = document.createElement("label");
+        const label4 = document.createElement("label");
+        const inputNome = document.createElement("input");
+        const inputDesc = document.createElement("input");
+        const inputValor = document.createElement("input");
+        const inputImagem = document.createElement("input");
+        const inputSubmit = document.createElement("input");
+        const buttonCancelar = document.createElement("button");
 
         form.classList.add("formulario-adicionar");
         form.id = "formularioCadastro";
@@ -92,8 +92,8 @@ class FormularioEditar{
         container.append(divHeader, divFormContainer);
 
         buttonClose.addEventListener('click', ()=>{
-            container.removeChild(divHeader);
-            container.removeChild(divFormContainer);
+            const divEditar = document.getElementById('containerCadastro');
+            divEditar.style.display = 'none';
         });
     }
     static handlerEvent(categoria, nomeProd, descProd, valorProd, imgProd){
@@ -146,3 +146,5 @@ class FormularioEditar{
 }
 /* Aqui se passa os valores: categoria, Nome, descricao, preço, e imagem a ser alteradas  */
 FormularioEditar.handlerEvent("Panificadora","valor1", "valor2", "valor3", "valor4")
+
+export default FormularioEditar;

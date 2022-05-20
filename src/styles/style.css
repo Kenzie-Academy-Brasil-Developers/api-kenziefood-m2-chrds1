@@ -764,7 +764,7 @@ div{
 
 /* Formulario AddProduto */
 #containerCadastro{
-
+    background-color: #ffffff;
     position: absolute;
     left: 35%;
     min-width: 450px;
@@ -821,7 +821,7 @@ div{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 90%;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
