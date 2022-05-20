@@ -12,7 +12,7 @@ class ProdutosDashboard{
         ProdutosDashboard.containerProdutos.innerHTML=""
         let lista = []
 
-        if(localStorage.length > 0) {
+        if(localStorage.getItem('Token') !== undefined) {
             Array === undefined? lista = await Api.produtosPrivados(): lista = Array;
         } 
         else{ProdutosDashboard.containerProdutos.innerHTML = `<h1>Usuário não está logado</h1>`}
@@ -170,6 +170,7 @@ class ProdutosDashboard{
     
     static addHandleExcluir(){
         const excluir = document.querySelectorAll('.fa-trash')
+        
         excluir.forEach((el)=> el.addEventListener('click', ProdutosDashboard.excluirItem))
     }
 

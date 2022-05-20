@@ -4,6 +4,7 @@ import {Carrinho} from "../models/Carrinho.js";
 
 
 class Produtos{
+    static count = 0
     static sectionProdutos = document.getElementById('container-produtos')
     static btnFrutas = document.getElementById('Frutas')
     static btnBebidas = document.getElementById('Bebidas')
@@ -14,7 +15,7 @@ class Produtos{
 
         let lista = []
 
-        if(localStorage.length == 0) {
+        if(localStorage.getItem('Token') == undefined) {
             lista = await Api.produtosPublicos()
         }
         else {
@@ -43,7 +44,7 @@ class Produtos{
     static async listarProdutos(Array){
         let lista = []
 
-        if(localStorage.length == 0) {
+        if(localStorage.getItem('Token') == undefined) {
             Array === undefined? lista = await Api.produtosPublicos(): lista = Array;
         }
 
@@ -118,7 +119,7 @@ class Produtos{
         event.preventDefault();
         const id = event.currentTarget.id
         let lista;
-        if(localStorage.length == 0) {
+        if(localStorage.getItem('Token') == undefined) {
             lista = await Api.produtosPublicos();
         }
         else {
@@ -127,6 +128,7 @@ class Produtos{
 
         const filtro = await lista.filter(el => el.id === id)
         
+        //localStorage.setItem(`Produto${count}`, JSON.stringify(filtro))
         filtro.forEach((el)=>{
             Carrinho.criaItemCarrinho(el.imagem, el.nome, el.categoria, el.preco)
         })  
@@ -147,7 +149,7 @@ class Produtos{
 
         let lista = []
 
-        if(localStorage.length == 0) {
+        if(localStorage.getItem('Token') == undefined) {
             lista = await Api.produtosPublicos()
         }
         else {
