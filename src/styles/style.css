@@ -762,3 +762,151 @@ div{
     }
 }
 
+/* Formulario AddProduto */
+#containerCadastro{
+
+    position: absolute;
+    left: 35%;
+    min-width: 450px;
+    height: 90%;
+}
+#containerCadastro *{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+}
+#editBtn{
+    width: 217px;
+    height: 45px;
+    border-radius: 20px;
+    border: 0;
+    background-color: #FF2253;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+}
+.formulario-adicionar{
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    padding:0 20px;
+    width: 100%;
+}
+.formulario-adicionar input{
+    padding-left: 20px;
+    max-width: 450px;
+    width: 90%;
+    height: 40px;
+    color: #868E96;;
+    background: #F8F9FA;
+    border: 1.5px solid #DEE2E6;
+    border-radius: 12px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+.formulario-adicionar label{
+    margin-top: 20px;
+}
+#formularioCadastro{
+    display: flex;
+    justify-content: space-between;
+}
+#cadastroHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 20px 20px;
+}
+#cadastroHeader button{
+    width: 30px;
+    height: 30px; 
+    border: 0;
+    background-color: #e9ecef; 
+    color: #868E96;
+    cursor: pointer;
+}
+#categorias{
+    display: flex;
+    width: 90%;
+    gap: 0 17px;
+}
+#categorias h2{
+    margin-top: 10px;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    width: 30%;
+    height: 40px;
+    border: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #868E96;
+    background: #F8F9FA;
+    cursor: pointer;
+    padding-left: 20px;
+}
+#cadastrarProduto{
+    background: #FF2253;
+    border: 1.5px solid #FF2253;
+    height: 45px;
+    border-radius: 32px;
+    color: #F8F9FA;
+    cursor: pointer;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    margin-top: 25px;
+
+}
+#descForm{
+    height: 60px;
+}
+
+#categorias .selecaoCategoria{
+    display: flex;
+    justify-content: center;
+    background-color: #FF2253;
+    color: #DEE2E6;
+    border-radius: 10px;
+    padding: 0;
+}
+.cancelarEdit{
+    font-size: 16px;
+    line-height: 19px;
+    width: 90%;
+    height: 30px;
+    margin-top: 10px;
+    height: 40;
+    border-radius: 15px;
+    border: 0;
+    background: #F8F9FA;
+    color: #868E96;
+    cursor: pointer;
+}
+.cancelarEdit:hover{
+    transition: 0,5s ease-in-out;
+    background-color: #FF2253;
+    color: #DEE2E6;
+}
+.formulario-adicionar input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
