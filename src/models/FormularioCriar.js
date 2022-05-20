@@ -81,8 +81,8 @@ class Formulario{
         container.append(divHeader, divFormContainer);
 
         buttonClose.addEventListener('click', ()=>{
-            container.removeChild(divHeader);
-            container.removeChild(divFormContainer);
+            const divEditar = document.getElementById('containerCadastro');
+            divEditar.style.display = 'none';
         });
     }
     static handlerEvent(){
