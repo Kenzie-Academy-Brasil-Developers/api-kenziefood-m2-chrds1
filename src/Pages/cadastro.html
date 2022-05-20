@@ -10,30 +10,36 @@
     <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body class="bodyCadastroLogin">
+  <main class="form-container">
     <div class="container">
-        <div class="header">
-          <h2 class="titulo-cadastro">Kenzie <span class="titulo-menor-cadastro">food</span></h2>
-        </div>
-        <form action="" method="post" class="form" id="form-cadastro">
-          <div class="formulario">
-            <input type="text" placeholder="Nome" name="name" maxlength="20">
-            <small>erro</small>
-          </div>
-          <div class="formulario">
-            <input type="email" placeholder="E-mail" name="email">
-            <small>erro</small>
-            <div class="formulario">
-              <input type="password" placeholder="Senha" name="password">
-              <small>erro</small>
-            </div>
-          <div class="formulario">
-            <input type="text" placeholder="Cidade" name="cidade">
-            <small>erro</small>
-          </div>
-      
-          <button id="cadastrar">Cadastrar</button>
-        </form>
+      <div class="header">
+        <h2 class="titulo-cadastro">Kenzie <span class="titulo-menor-cadastro">food</span></h2>
       </div>
+      <form action="" method="post" class="form" id="form-cadastro">
+        <div class="formulario">
+          <input type="text" placeholder="Nome" name="name" maxlength="20">
+          <small>erro</small>
+        </div>
+        <div class="formulario">
+          <input type="email" placeholder="E-mail" name="email">
+          <small>erro</small>
+          <div class="formulario">
+            <input type="password" placeholder="Senha" name="password">
+            <small>erro</small>
+        </div>
+        <div class="formulario">
+          <input type="text" placeholder="Cidade" name="cidade">
+          <small>erro</small>
+        </div>
+    
+        <button id="cadastrar">Cadastrar</button>
+      </form>
+    </div>
+  </div>
+    <div class="link-form">
+      Já é cadastrado? Faça <a href="./login.html">login</a>.
+    </div>
+  </main>
       <script type="module" src="./../controllers/Api.js"></script>
       <script type="module" src="./../models/Cadastro.js"></script>
 </body>
