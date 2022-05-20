@@ -1,7 +1,9 @@
+import Api from "../controllers/Api.js";
+
 class Formulario{
     static pedido = {}
     static criaModalFormulario(evt){
-
+        
         let container = document.getElementById("containerCadastro");
         container.innerHTML = "";
         let divHeader = document.createElement("div");
@@ -106,7 +108,7 @@ class Formulario{
         let form = document.getElementById("formularioCadastro");
         form.addEventListener("submit", Formulario.criaCorpo); 
     }
-    static criaCorpo(e){
+    static async criaCorpo(e){
         e.preventDefault()
         let form = [... e.currentTarget]
         let valor = form[2].value
@@ -123,9 +125,12 @@ class Formulario{
                 }
             });
         }
-        console.log(Formulario.pedido);
-        
+
+        Formulario.pedido.preco = Number(Formulario.pedido.preco);
+        await Api.criarProduto(Formulario.pedido);
+        location.reload();
+        return Formulario.pedido;
     }
 }
 
-Formulario.handlerEvent()
+export default Formulario

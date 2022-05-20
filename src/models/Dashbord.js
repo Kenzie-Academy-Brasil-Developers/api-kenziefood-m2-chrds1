@@ -1,5 +1,6 @@
 import Api from "../controllers/Api.js";
 import FormularioEditar from "./Formularioeditar.js";
+import Formulario from "./FormularioCriar.js";
 
 class ProdutosDashboard{
 
@@ -56,7 +57,7 @@ class ProdutosDashboard{
 
                 ProdutosDashboard.containerProdutos.append(containerProd)
 
-                this.addHandleEditar(produto.categoria, produto.nome, produto.descricao, produto.preco, produto.imagem, produto.id);
+                this.addHandleEditar(produto);
             })
         }
         ProdutosDashboard.addHandleFiltroCategoria();
@@ -117,16 +118,17 @@ class ProdutosDashboard{
         categoriaProduto.forEach(el => el.addEventListener('click', ProdutosDashboard.filtroProdutos));
     }
 
-    static addHandleEditar(categoria, nomeProd, descProd, valorProd, imgProd, id){
-        let handler = document.getElementById(id);
+    static addHandleEditar(objProduto){
+        let handler = document.getElementById(objProduto.id);
         handler.addEventListener('click', (evt)=>{
             const divEditar = document.getElementById('containerCadastro');
             divEditar.style.display = 'block';
-            FormularioEditar.criaModalFormulario(evt, nomeProd, descProd, valorProd, imgProd);
-            FormularioEditar.criaPedido(evt);
+            
+            FormularioEditar.criaModalFormulario(evt, objProduto);
+            FormularioEditar.criaPedido(objProduto.id);
             let div  = document.getElementById("categorias").childNodes
             div.forEach(elem=>{
-                if(categoria === elem.innerText){
+                if(objProduto.categoria === elem.innerText){
                     elem.classList.add("selecaoCategoria")
                     FormularioEditar.pedido.categoria = ""
                     FormularioEditar.pedido.categoria = elem.innerText
@@ -142,10 +144,32 @@ class ProdutosDashboard{
             });
         });
     }
+
+    static addHandleAdicionarProduto(){
+        let handler = document.getElementById("editBtn");
+        handler.addEventListener('click', (evt)=>{
+            const divEditar = document.getElementById('containerCadastro');
+            divEditar.style.display = 'block';
+
+            Formulario.criaModalFormulario();
+            Formulario.criaPedido(evt);
+            let div  = document.getElementById("categorias").childNodes
+            div.forEach(elem=>{
+                
+                elem.addEventListener("click", (e)=>{
+                    div.forEach((elem2)=>{
+                        elem2.classList.remove("selecaoCategoria")
+                    })
+                    Formulario.pedido.categoria = ""
+                    Formulario.pedido.categoria = elem.innerText
+                    e.target.classList.add("selecaoCategoria")
+                });
+            });
+        });
+    }
     
     static addHandleExcluir(){
         const excluir = document.querySelectorAll('.fa-trash')
-        console.log(excluir)
         excluir.forEach((el)=> el.addEventListener('click', ProdutosDashboard.excluirItem))
     }
 
@@ -157,6 +181,8 @@ class ProdutosDashboard{
         return deletar
     }
 }
+
+ProdutosDashboard.addHandleAdicionarProduto();
 ProdutosDashboard.criarCard();
 ProdutosDashboard.addHandlePesquisa();
 ProdutosDashboard.addHandleFiltroCategoria();

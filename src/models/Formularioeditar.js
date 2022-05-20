@@ -1,7 +1,8 @@
+import Api from "../controllers/Api.js";
+
 class FormularioEditar{
     static pedido = {}
-    static criaModalFormulario(evt, nomeProd, descProd, valorProd, imgProd){
-        console.log(nomeProd, descProd, valorProd, imgProd);
+    static criaModalFormulario(evt, objetoProduto) {
         /* Valor a ser mudado container a baixo espera um container na plataforma mudar */
         let container = document.getElementById("containerCadastro");
         container.innerHTML = "";
@@ -30,7 +31,7 @@ class FormularioEditar{
         const inputDesc = document.createElement("input");
         const inputValor = document.createElement("input");
         const inputImagem = document.createElement("input");
-        const inputSubmit = document.createElement("input");
+        const inputSubmit = document.createElement("button");
         const buttonCancelar = document.createElement("button");
 
         form.classList.add("formulario-adicionar");
@@ -50,25 +51,25 @@ class FormularioEditar{
         inputNome.type = "text";
         inputNome.placeholder = "Digitar o nome";
         inputNome.name = "nome";
-        inputNome.value = nomeProd;
+        inputNome.value = objetoProduto.nome;
 
         inputDesc.type = "text";
         inputDesc.placeholder = "Digitar a descrição";
         inputDesc.name = "descricao";
-        inputDesc.value = descProd;
+        inputDesc.value = objetoProduto.descricao;
         
         inputValor.type = "text";
         inputValor.placeholder = "Digite o valor aqui";
         inputValor.name = "preco";
-        inputValor.value = valorProd;
+        inputValor.value = objetoProduto.preco;
 
         inputImagem.type = "url";
         inputImagem.placeholder = "Inserir link";
         inputImagem.name = "imagem" ;
-        inputImagem.value = imgProd;
+        inputImagem.value = objetoProduto.imagem;
         
         inputSubmit.type = "submit";
-        inputSubmit.value = "Salvar alteraçoes";
+        inputSubmit.innerText = "Salvar alteraçoes";
         inputSubmit.id = "cadastrarProduto";
         
         h2.innerText = "Categorias";
@@ -91,40 +92,30 @@ class FormularioEditar{
         divFormContainer.append(form);
         container.append(divHeader, divFormContainer);
 
+        //this.enviarDadosEditados(objetoProduto);
+
         buttonClose.addEventListener('click', ()=>{
             const divEditar = document.getElementById('containerCadastro');
             divEditar.style.display = 'none';
         });
     }
-    static handlerEvent(categoria, nomeProd, descProd, valorProd, imgProd){
-        let handler = document.getElementById("handler");
-        handler.addEventListener('click', (evt)=>{
-            FormularioEditar.criaModalFormulario(evt, nomeProd, descProd, valorProd, imgProd);
-            FormularioEditar.criaPedido(evt);
-            let div  = document.getElementById("categorias").childNodes
-            div.forEach(elem=>{
-                if(categoria === elem.innerText){
-                    elem.classList.add("selecaoCategoria")
-                    FormularioEditar.pedido.categoria = ""
-                    FormularioEditar.pedido.categoria = elem.innerText
-                }
-                elem.addEventListener("click", (e)=>{
-                    div.forEach((elem2)=>{
-                        elem2.classList.remove("selecaoCategoria")
-                    })
-                    FormularioEditar.pedido.categoria = ""
-                    FormularioEditar.pedido.categoria = elem.innerText
-                    e.target.classList.add("selecaoCategoria")
-                });
-            });
-        });
+
+    static enviarDadosEditados(objetoProduto) {
+        const botao = document.getElementById('cadastrarProduto');
+        botao.addEventListener('click', (e) => {
+            const produtoEditado = FormularioEditar.criaPedido(objetoProduto.id);
+            console.log()
+        })
     }
-    static criaPedido(e){
+
+    static criaPedido(id){
         let form = document.getElementById("formularioCadastro");
-        form.addEventListener("submit", FormularioEditar.criaCorpo); 
+        form.addEventListener("submit", (e) => {
+            FormularioEditar.criaCorpo(e, id)
+        }); 
     }
-    static criaCorpo(e){
-        e.preventDefault()
+    static async criaCorpo(e, id){
+        e.preventDefault();
         let form = [... e.currentTarget]
         let valor = form[2].value
         let regex = /[a-z]+/i;
@@ -140,11 +131,13 @@ class FormularioEditar{
                 }
             });
         }
-        console.log(FormularioEditar.pedido);
-        
+
+        FormularioEditar.pedido.preco = Number(FormularioEditar.pedido.preco);
+
+        await Api.editarProduto(id, FormularioEditar.pedido);
+        location.reload();
+        return FormularioEditar.pedido;
     }
 }
-/* Aqui se passa os valores: categoria, Nome, descricao, preço, e imagem a ser alteradas  */
-FormularioEditar.handlerEvent("Panificadora","valor1", "valor2", "valor3", "valor4")
 
 export default FormularioEditar;
